@@ -28,9 +28,11 @@ class ProgressView_Circle: ProgressView {
     // MARK: - Sub Views Override Actions
     
     override func deploy_at_init() {
-        addSubview(info_label)
-        info_label.textColor = UIColor.black
-        info_label.sizeToFit()
+        DispatchQueue.main.async {            
+            self.addSubview(self.info_label)
+            self.info_label.textColor = UIColor.black
+            self.info_label.sizeToFit()
+        }
     }
     
     /** SubView: 更新背景图层操作 */
@@ -53,5 +55,17 @@ class ProgressView_Circle: ProgressView {
         )
     }
     
-
+    // MARK: - Gesture
+    
+    /** 拖拽事件 */
+    override func pan_action(_ sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .changed:
+            break
+        default:
+            break
+        }
+        super.pan_action(sender)
+    }
+    
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C1F4CCD1EFD58BF0063C4DB /* ProgressView_Touch_Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1F4CCC1EFD58BF0063C4DB /* ProgressView_Touch_Animation.swift */; };
 		9C396AE01EF3DE51005D144F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C396ADF1EF3DE51005D144F /* AppDelegate.swift */; };
 		9C396AE21EF3DE51005D144F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C396AE11EF3DE51005D144F /* ViewController.swift */; };
 		9C396AE51EF3DE51005D144F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C396AE31EF3DE51005D144F /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9C1F4CCC1EFD58BF0063C4DB /* ProgressView_Touch_Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView_Touch_Animation.swift; sourceTree = "<group>"; };
 		9C396ADC1EF3DE51005D144F /* ProgressView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgressView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C396ADF1EF3DE51005D144F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C396AE11EF3DE51005D144F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		9C396AF41EF3DF2E005D144F /* Progress */ = {
 			isa = PBXGroup;
 			children = (
+				9C1F4CCC1EFD58BF0063C4DB /* ProgressView_Touch_Animation.swift */,
 				9C396AF51EF3DF2E005D144F /* ProgressView.swift */,
 				9C396AF61EF3DF2E005D144F /* ProgressView_Circle.swift */,
 				9C396AF71EF3DF2E005D144F /* ProgressView_Circle_Calibration.swift */,
@@ -175,6 +178,7 @@
 				9C396AF31EF3DF13005D144F /* README.md in Sources */,
 				9C396AF91EF3DF2E005D144F /* ProgressView.swift in Sources */,
 				9C396AE21EF3DE51005D144F /* ViewController.swift in Sources */,
+				9C1F4CCD1EFD58BF0063C4DB /* ProgressView_Touch_Animation.swift in Sources */,
 				9C396AE01EF3DE51005D144F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -60,6 +60,7 @@ class ProgressView_Circle_Calibration: ProgressView_Circle {
             add(layer: shape, key: "content_layer_\(i)")
         }
     }
+    
     /** SubView: 更新颜色 */
     override func update_colors() {
         get(layer: "background")?.backgroundColor = color_back.cgColor
@@ -71,6 +72,7 @@ class ProgressView_Circle_Calibration: ProgressView_Circle {
             get(shape_layer: "content_layer_\(i)")?.strokeColor  = color_sub.cgColor
         }
     }
+    
     /** SubView: 更新内容图层操作 */
     override func update_progress(value: CGFloat) {
         let time = Int(value * CGFloat(calibration_count) + 0.5)

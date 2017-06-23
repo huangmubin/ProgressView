@@ -165,6 +165,12 @@ class ProgressView: UIView {
     
     /** 单击事件 */
     func tap_action(_ sender: UITapGestureRecognizer) {
+        switch sender.state {
+        case .cancelled, .ended:
+            gesture_animation_view.animation_end()
+        default:
+            break
+        }
         delegate?.progress?(
             view: self,
             gesture_tap_action: sender
@@ -173,10 +179,44 @@ class ProgressView: UIView {
     
     /** 拖拽事件 */
     func pan_action(_ sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .changed:
+            gesture_animation_view.center = sender.location(in: self)
+        case .cancelled, .ended:
+            gesture_animation_view.animation_end()
+        default:
+            break
+        }
         delegate?.progress?(
             view: self,
             gesture_pan_action: sender
         )
+    }
+    
+    // MARK: Gesture Animation
+    
+    lazy var gesture_animation_view: ProgressView.Touch_Animation = ProgressView.Touch_Animation(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+    @IBInspectable var color_gesture_view: UIColor = UIColor.lightGray {
+        didSet {
+            gesture_animation_view.backgroundColor = color_gesture_view
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        gesture_animation_view.center = touches.first!.location(in: self)
+        addSubview(gesture_animation_view)
+        gesture_animation_view.animation_start()
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        gesture_animation_view.center = touches.first!.location(in: self)
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        gesture_animation_view.animation_end()
     }
     
     // MARK: - Timer
